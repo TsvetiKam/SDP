@@ -5,7 +5,7 @@
 template <typename T>
 class Stack {
 private:
-	
+
 	struct Node {
 		T data;
 		Node* next;
@@ -27,11 +27,6 @@ public:
 	void push( T value );
 	T pop();
 	T top()const;
-
-
-
-
-
 };
 
 template<typename T>
@@ -121,13 +116,5 @@ inline T Stack<T>::top() const {
 		return topElement->data;
 	}
 }
-
-
-
-
-
-
-
-
 
 #endif
