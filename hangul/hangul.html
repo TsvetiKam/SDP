@@ -40,6 +40,14 @@
 
 			var letter1 = new THREE.Object3D();
 
+			var extrudeSettings = {
+					amount: 5,
+					bevelEnabled: true,
+					bevelSegments: 1,
+					steps: 2,
+					bevelSize: 0.1,
+					bevelThickness: 0.1 };
+
 			var cane1 = new THREE.Shape();
 			cane1.moveTo(0, 0);
 			cane1.quadraticCurveTo(0.9, 0.3, 4, -1);
@@ -49,24 +57,32 @@
 			cane1.quadraticCurveTo(3,-1.7, 0,-0.5);
 			cane1.quadraticCurveTo(-0.9,-0.25,0,0);
 
-
-
-			var extrudeSettings = {
-					amount: 5,
-				 	bevelEnabled: true,
-					bevelSegments: 1,
-					steps: 2,
-					bevelSize: 0.1,
-					bevelThickness: 0.1 };
 			var caneShape = new THREE.ExtrudeGeometry(cane1, extrudeSettings);
-			caneShape.translate(0,9,0);
+			caneShape.translate(11,9,0);
 			var cane = new THREE.Mesh(caneShape, material);
-			//cane.position.set(0,0,0);
-			letter1.add(cane);
-			word.add( letter1 );
-			//scene.add(cane);
 
-			//tsveti.haha = 4;
+			//cane.position.set(0,0,0);
+
+			letter1.add(cane);
+
+
+			var knot1 = new THREE.Shape();
+			knot1.moveTo(-1,0);
+			knot1.lineTo(1,0);
+			knot1.quadraticCurveTo(1.7,0.9,3,0.7);
+			//knot1.quadraticCurveTo(5.5,0,3,-0.7);
+			knot1.bezierCurveTo(4,0.6,4,-0.3,3,-0.7);
+			knot1.lineTo(-1,-0.7);
+
+
+			var knotShape = new THREE.ExtrudeGeometry(knot1, extrudeSettings);
+			knotShape.translate(15.5,0,0);
+			var knot = new THREE.Mesh(knotShape, material);
+			letter1.add(knot);
+			
+			
+			word.add( letter1 );
+
 
 
 			/*
