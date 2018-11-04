@@ -52,7 +52,7 @@
 			cane1.moveTo(0, 0);
 			cane1.quadraticCurveTo(0.9, 0.3, 4, -1);
 			cane1.quadraticCurveTo(4.7, -1, 4, -15);
-			cane1.quadraticCurveTo(3, -20, 3, -15);
+			cane1.quadraticCurveTo(3, -21, 3, -15);
 			cane1.lineTo(3,-2.5);
 			cane1.quadraticCurveTo(3,-1.7, 0,-0.5);
 			cane1.quadraticCurveTo(-0.9,-0.25,0,0);
@@ -79,8 +79,21 @@
 			knotShape.translate(15.5,0,0);
 			var knot = new THREE.Mesh(knotShape, material);
 			letter1.add(knot);
-			
-			
+
+
+			var hockeyStick1 = new THREE.Shape();
+			hockeyStick1.moveTo(0,1);
+			hockeyStick1.quadraticCurveTo(-9.5,-1.5,-10,-2.2);
+			hockeyStick1.quadraticCurveTo(-10.5,-2.5,-13,-1);
+			hockeyStick1.quadraticCurveTo(-14,-0.3,-13.2,-0.4);
+			hockeyStick1.quadraticCurveTo(-11,-1.5,0,1.4);
+
+			var hockeyStickShape = new THREE.ExtrudeGeometry(hockeyStick1, extrudeSettings);
+			hockeyStickShape.translate(14,-4,0);
+			var hockeyStick = new THREE.Mesh(hockeyStickShape, material);
+
+			word.add(hockeyStick);
+
 			word.add( letter1 );
 
 
