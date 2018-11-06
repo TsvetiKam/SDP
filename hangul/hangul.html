@@ -51,14 +51,14 @@
 			var cane1 = new THREE.Shape();
 			cane1.moveTo(0, 0);
 			cane1.quadraticCurveTo(0.9, 0.3, 4, -1);
-			cane1.quadraticCurveTo(4.7, -1, 4, -15);
-			cane1.quadraticCurveTo(3, -21, 3, -15);
-			cane1.lineTo(3,-2.5);
-			cane1.quadraticCurveTo(3,-1.7, 0,-0.5);
-			cane1.quadraticCurveTo(-0.9,-0.25,0,0);
+			cane1.quadraticCurveTo(4.5, -1, 4, -15);
+			cane1.quadraticCurveTo(3, -24, 3, -15);
+			cane1.lineTo(3.2,-2.5);
+			cane1.quadraticCurveTo(3,-1.7, 0.5,-0.5);
+			cane1.quadraticCurveTo(-0.3,-0.1,0,0);
 
 			var caneShape = new THREE.ExtrudeGeometry(cane1, extrudeSettings);
-			caneShape.translate(11,9,0);
+			caneShape.translate(11,9.5,0);
 			var cane = new THREE.Mesh(caneShape, material);
 
 			//cane.position.set(0,0,0);
@@ -92,7 +92,52 @@
 			hockeyStickShape.translate(14,-4,0);
 			var hockeyStick = new THREE.Mesh(hockeyStickShape, material);
 
-			word.add(hockeyStick);
+			letter1.add(hockeyStick);
+
+
+			var stump1 = new THREE.Shape();
+			stump1.moveTo(0,0);
+			stump1.lineTo(0,2);
+			stump1.lineTo(1,2);
+			stump1.lineTo(1,0);
+
+			var stumpShape = new THREE.ExtrudeGeometry(stump1, extrudeSettings);
+			stumpShape.translate(7,-4.5,0);
+			var stump = new THREE.Mesh(stumpShape, material);
+			letter1.add(stump);
+
+			var wheel1 = new THREE.Shape();
+			wheel1.moveTo(0,0);
+		//	wheel1.quadraticCurveTo(5,-5,10,0);
+			wheel1.bezierCurveTo(0, 6, 10, 6, 10, 0);
+			wheel1.lineTo(9, 0);
+			wheel1.bezierCurveTo(9, 4.75, 1, 4.75, 1, 0);
+			wheel1.lineTo(0,0);
+
+			var extrudeSettings2 = {
+					amount: 6.7,
+					bevelEnabled: true,
+					bevelSegments: 1,
+					steps: 2,
+					bevelSize: 0.1,
+					bevelThickness: 0.1 };
+
+			var wheelShape = new THREE.ExtrudeGeometry(wheel1, extrudeSettings2);
+			wheelShape.translate(2,0,0);
+			var wheel = new THREE.Mesh(wheelShape, material);
+			word.add(wheel);
+			var wheel2 = wheel.clone();
+			wheel2.rotation.x = Math.PI;
+			wheel2.position.set(0,0,6.7);
+			var circle = new THREE.Object3D();
+			circle.add(wheel);
+			circle.add(wheel2);
+
+			circle.scale.set(0.75,0.75,0.75);
+			circle.position.set(2,0.5,0);
+
+			letter1.add(circle);
+
 
 			word.add( letter1 );
 
