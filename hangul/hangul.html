@@ -225,6 +225,38 @@
 			//word.add(pillarFinal);
 			letter2.add(part1);
 
+			var part2 = new THREE.Object3D();
+
+			var smallCane = new THREE.Shape();
+			smallCane.moveTo(0, 0);
+			smallCane.quadraticCurveTo(0.9, 0.3, 4, -1);
+			smallCane.quadraticCurveTo(4.5, -1, 4, -5);
+			smallCane.quadraticCurveTo(3, -14, 3, -7);
+			smallCane.lineTo(3.2,-2.5);
+			smallCane.quadraticCurveTo(3,-1.7, 0.5,-0.5);
+			smallCane.quadraticCurveTo(-0.3,-0.1,0,0);
+
+			var smallCaneShape = new THREE.ExtrudeGeometry(smallCane, extrudeSettings);
+			smallCaneShape.translate(-9,9,0);
+			var smallCaneFinal = new THREE.Mesh(smallCaneShape, material);
+
+			var scalpel = new THREE.Shape();
+			scalpel.moveTo(0,0);
+			scalpel.lineTo(5.5,0);
+			scalpel.lineTo(5.5,-0.7);
+			scalpel.lineTo(1.5,-0.7);
+			scalpel.bezierCurveTo(1,-0.8,1,-1.2,0,-0.7);
+			scalpel.quadraticCurveTo(-2,0.3,0,0);
+			//scalpel.bezierCurveTo(0.5,-1.5,0.5,-0.5,0.3,-0.5);
+
+			var scalpelShape = new THREE.ExtrudeGeometry(scalpel, extrudeSettings);
+			scalpelShape.translate(-11,4,0);
+			var scalpelFinal = new THREE.Mesh(scalpelShape, material);
+			part2.add(scalpelFinal);
+			part2.add(smallCaneFinal);
+			part2.position.set(1,0,0);
+			letter2.add(part2);
+
 			word.add(letter2);
 
 
