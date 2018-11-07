@@ -39,6 +39,7 @@
 	  	//	word.add( cube1 );
 
 			var letter1 = new THREE.Object3D();
+			var letter2 = new THREE.Object3D();
 
 			var extrudeSettings = {
 					amount: 5,
@@ -174,7 +175,7 @@
 			babySnake.bezierCurveTo(6,-1,6,-2,5,-2);
 			babySnake.lineTo(1,-1.7);
 			babySnake.quadraticCurveTo(0.5,-1.7,-0.5,-0.2);
-			babySnake.quadraticCurveTo(-0.5,0.3,0,0);
+			babySnake.quadraticCurveTo(-0.8,0.4,0,0);
 
 			var babySnakeShape = new THREE.ExtrudeGeometry(babySnake, extrudeSettings);
 			babySnakeShape.translate(4.5,8.5,0);
@@ -182,8 +183,49 @@
 			babySnakeFinal.rotation.z = Math.PI/30;
 			letter1.add(babySnakeFinal);
 
-
 			word.add( letter1 );
+
+
+			// части на втората буква
+			var part1 = new THREE.Object3D();
+
+
+			var hockey = new THREE.Shape();
+			hockey.moveTo(0,0);
+			hockey.quadraticCurveTo(1.5,-0.5,2,-0.9);
+			hockey.quadraticCurveTo(2.3,-1.2,2,-1.7);
+			hockey.quadraticCurveTo(1.2,-3,0.4,-4);
+			hockey.quadraticCurveTo(-0.7,-5.5,-3.8,-7.2);
+			hockey.quadraticCurveTo(-4.4,-7.4,-3.8,-6.9);
+			hockey.quadraticCurveTo(-0.4,-4,0.5,-2);
+			hockey.quadraticCurveTo(0.9,-1.4,0.5,-1);
+			hockey.lineTo(0,-0.5);
+			hockey.quadraticCurveTo(-1,0.3,0,0);
+
+			var hockeyShape = new THREE.ExtrudeGeometry(hockey,extrudeSettings);
+			hockeyShape.translate(-10,6,0);
+			var hockeyFinal = new THREE.Mesh(hockeyShape, material);
+
+			part1.add(hockeyFinal);
+			//word.add(hockeyFinal);
+
+			var pillar = new THREE.Shape();
+			pillar.moveTo(-0.5,0.5);
+			pillar.lineTo(1,-1);
+			pillar.bezierCurveTo(1.5,-1.3,1.4,-1,2,-1.5);
+			pillar.bezierCurveTo(3.6,-3,2.7,-3.8,1.2,-2);
+			pillar.lineTo(-0.7,0);
+
+			var pillarShape = new THREE.ExtrudeGeometry(pillar, extrudeSettings);
+			pillarShape.translate(-9.3,1.5,0);
+			var pillarFinal = new THREE.Mesh(pillarShape, material);
+
+			part1.add(pillarFinal);
+			part1.position.set(-5,2,0);
+			//word.add(pillarFinal);
+			letter2.add(part1);
+
+			word.add(letter2);
 
 
 
