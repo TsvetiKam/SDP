@@ -221,7 +221,7 @@
 			var pillarFinal = new THREE.Mesh(pillarShape, material);
 
 			part1.add(pillarFinal);
-			part1.position.set(-5,2,0);
+			part1.position.set(-5,1.5,0);
 			//word.add(pillarFinal);
 			letter2.add(part1);
 
@@ -256,6 +256,66 @@
 			part2.add(smallCaneFinal);
 			part2.position.set(1,0,0);
 			letter2.add(part2);
+
+			var scalpel2 = new THREE.Shape();
+			scalpel2.moveTo(0,0);
+			scalpel2.lineTo(8,0);
+			scalpel2.quadraticCurveTo(9,0.4,10,0);
+			scalpel2.quadraticCurveTo(10.5,-0.4,10,-0.7);
+			scalpel2.quadraticCurveTo(8.7,-2.7,8.5,-3.7);
+			scalpel2.lineTo(7.8,-3.7);
+			scalpel2.lineTo(8,-0.7);
+			scalpel2.lineTo(1.5,-0.7);
+			scalpel2.bezierCurveTo(1,-0.8,1,-1.2,0,-0.7);
+			scalpel2.quadraticCurveTo(-2,0.3,0,0);
+			//scalpel.bezierCurveTo(0.5,-1.5,0.5,-0.5,0.3,-0.5);
+
+			var scalpelShape2 = new THREE.ExtrudeGeometry(scalpel2, extrudeSettings);
+			scalpelShape2.translate(-14.5,-2,0);
+			var scalpelFinal2 = new THREE.Mesh(scalpelShape2, material);
+
+			letter2.add(scalpelFinal2);
+
+			var earStick = new THREE.Shape();
+			earStick.moveTo(0,0);
+			earStick.quadraticCurveTo(0.3,0.7,3,0);
+			earStick.lineTo(8.5,0);
+			earStick.quadraticCurveTo(10,0.5,10.5,0);
+			earStick.quadraticCurveTo(10.7,-0.5,10,-0.7);
+			earStick.lineTo(3,-0.7);
+			earStick.bezierCurveTo(2.8,-0.8,2,-1,1.5,-0.7);
+			earStick.bezierCurveTo(1,-0.1,0,-0.3,0,0);
+
+
+
+			var earStickShape = new THREE.ExtrudeGeometry(earStick, extrudeSettings);
+			earStickShape.translate(-15.7,-5.8,0);
+			var earStickFinal = new THREE.Mesh(earStickShape,material);
+
+			letter2.add(earStickFinal);
+
+			var snake = new THREE.Shape();
+			snake.moveTo(0,0);
+			snake.lineTo(0,-3);
+			snake.quadraticCurveTo(0,-3.5,1,-3.5);
+			snake.lineTo(9,-3.5);
+			snake.quadraticCurveTo(10,-3,9,-2.4);
+			snake.quadraticCurveTo(8.5,-2.2,7.5,-2.2);
+			snake.quadraticCurveTo(7,-2.2,6.5,-2.8);
+			snake.lineTo(1.4,-2.8);
+			snake.quadraticCurveTo(1.2,-2.7,1.2,-2.5);
+			snake.lineTo(1.2,0);
+
+
+			var snakeShape = new THREE.ExtrudeGeometry(snake, extrudeSettings);
+			snakeShape.translate(-14.3,-6,0);
+			var snakeFinal = new THREE.Mesh(snakeShape, material);
+
+			letter2.add(snakeFinal);
+			letter2.position.set(1,0,0);
+			letter1.position.set(-1,0,0);
+
+
 
 			word.add(letter2);
 
