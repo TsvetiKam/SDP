@@ -16,7 +16,7 @@
 
 	<body onload="main()">
 		<!-- В тага h1 си напишете факултетния номер, групата в Мудъл и двете си имена -->
-		<h1>ф.н. 99999 &ndash; група 9 &ndash; Малкоимен Фамилиев</h1>
+		<h1>ф.н. 81736 &ndash; група 7 &ndash; Цветелина Каменова</h1>
 
 		<!-- В този script таг напишете кода за създаване на
 		думата, изписана на хангъл. Кодът по-долу е примерен.
@@ -137,6 +137,56 @@
 			circle.position.set(2,0.5,0);
 
 			letter1.add(circle);
+
+			var notCube1 = new THREE.Shape();
+			notCube1.moveTo(0,0);
+			notCube1.quadraticCurveTo(0.8,0.3,-0.3,2);
+			notCube1.lineTo(1,2);
+			notCube1.bezierCurveTo(0.3,1,2,0.5,1,0);
+
+			var notCubeShape = new THREE.ExtrudeGeometry(notCube1, extrudeSettings);
+			var notCube = new THREE.Mesh(notCubeShape, material);
+			notCube.position.set(6.5,3.5,0);
+
+			letter1.add(notCube);
+
+			var peg = new THREE.Shape();
+			peg.moveTo(-1,0);
+			peg.quadraticCurveTo(1,-0.7,7,0);
+			peg.bezierCurveTo(7.7,0.2,7.4,0.4,8,0.5);
+			peg.bezierCurveTo(10,0.5,10,-0.5,8,-0.5);
+			peg.lineTo(2,-1);
+			peg.quadraticCurveTo(1.1,-1,1,-1.3);
+			peg.quadraticCurveTo(0.8,-1.7,-1,-0.2);
+			peg.quadraticCurveTo(-1.2,-0.1,-1,0);
+		//	peg.bezierCurveTo(1.3,-1.5,1.7,-0.5,1,-1.5);
+		//	peg.lineTo(-1,-3);
+
+			var pegShape = new THREE.ExtrudeGeometry(peg, extrudeSettings);
+			pegShape.translate(2.5,5.9,0);
+			var pegFinal = new THREE.Mesh(pegShape, material);
+
+			letter1.add(pegFinal);
+
+			/*var hockeyStick2 = new THREE.Shape();
+			hockeyStick2.moveTo(0,0);
+			hockeyStick2.quadraticCurveTo(-9.5,-1.5,-10,-2.2);
+			hockeyStick2.quadraticCurveTo(-10.5,-2.5,-13,-1);
+			hockeyStick2.quadraticCurveTo(-14,-0.3,-13.2,-0.4);
+			hockeyStick2.quadraticCurveTo(-11,-1.5,0,1);
+
+			var hockeyStickShape2 = new THREE.ExtrudeGeometry(hockeyStick2, extrudeSettings2);
+			//hockeyStickShape2.translate(12,10,0);
+		//	hockeyStickShape2.translate(-5,0,0);
+			var hockeyStick2 = new THREE.Mesh(hockeyStickShape2, material);
+			hockeyStick2.rotation.z = -Math.PI/12;
+			hockeyStick2.scale.set(0.75,0.75,0.75);
+
+			letter1.add(hockeyStick2);
+
+
+
+			*/
 
 
 			word.add( letter1 );
