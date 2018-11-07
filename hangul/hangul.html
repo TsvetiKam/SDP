@@ -168,25 +168,19 @@
 
 			letter1.add(pegFinal);
 
-			/*var hockeyStick2 = new THREE.Shape();
-			hockeyStick2.moveTo(0,0);
-			hockeyStick2.quadraticCurveTo(-9.5,-1.5,-10,-2.2);
-			hockeyStick2.quadraticCurveTo(-10.5,-2.5,-13,-1);
-			hockeyStick2.quadraticCurveTo(-14,-0.3,-13.2,-0.4);
-			hockeyStick2.quadraticCurveTo(-11,-1.5,0,1);
+			var babySnake = new THREE.Shape();
+			babySnake.moveTo(0,0);
+			babySnake.quadraticCurveTo(1,-0.5,5,-0.7);
+			babySnake.bezierCurveTo(6,-1,6,-2,5,-2);
+			babySnake.lineTo(1,-1.7);
+			babySnake.quadraticCurveTo(0.5,-1.7,-0.5,-0.2);
+			babySnake.quadraticCurveTo(-0.5,0.3,0,0);
 
-			var hockeyStickShape2 = new THREE.ExtrudeGeometry(hockeyStick2, extrudeSettings2);
-			//hockeyStickShape2.translate(12,10,0);
-		//	hockeyStickShape2.translate(-5,0,0);
-			var hockeyStick2 = new THREE.Mesh(hockeyStickShape2, material);
-			hockeyStick2.rotation.z = -Math.PI/12;
-			hockeyStick2.scale.set(0.75,0.75,0.75);
-
-			letter1.add(hockeyStick2);
-
-
-
-			*/
+			var babySnakeShape = new THREE.ExtrudeGeometry(babySnake, extrudeSettings);
+			babySnakeShape.translate(4.5,8.5,0);
+			var babySnakeFinal = new THREE.Mesh(babySnakeShape, material);
+			babySnakeFinal.rotation.z = Math.PI/30;
+			letter1.add(babySnakeFinal);
 
 
 			word.add( letter1 );
